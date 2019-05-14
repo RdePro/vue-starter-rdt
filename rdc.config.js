@@ -13,7 +13,7 @@ module.exports = {
                 suites: [
                     {
                         name: 'sc-common-vue',
-                        version: '1.0',
+                        version: '^0.1.30',
                         alias: 'scCommonVue'
                     }
                 ],
