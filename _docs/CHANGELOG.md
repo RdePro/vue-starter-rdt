@@ -1,4 +1,8 @@
  
+### [1.1.1](https://github.com/RdePro/rdc-vue-starter/compare/v1.1.0...v1.1.1) (2019-05-17)
+
+
+
 ## 1.1.0 (2019-05-17)
 
 
