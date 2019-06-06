@@ -8,10 +8,8 @@ module.exports = {
       '.html',
       '.js',
     ],
-    dev: {
-      render: {
-        title: 'title'
-      }
+    mock: {
+      title: 'title'
     }
   },
   mappings: [
@@ -25,7 +23,7 @@ module.exports = {
     }
   ],
   docker: {
-    tag: 'rdebase/rdc-vue-starter:0.0.1-beta.0',
+    tag: 'rdebase/rdc-vue-starter:0.0.1-alpha.6',
     ports: [
       '8080:8080'
     ]
