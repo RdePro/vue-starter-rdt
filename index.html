@@ -1,8 +1,11 @@
 <html>
 <head>
-  <meta title="VUE Suite">
+  <meta title="rdc-vue-starter">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <title>rdc-vue-starter</title>
+  <base href="https:&#x2F;&#x2F;rdepro.github.io&#x2F;rdc-vue-starter&#x2F;">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/mono-blue.min.css">
@@ -28,7 +31,7 @@
   #rde-page { position: absolute; left: var(--sidebar-width); top: var(--header-height); right: calc((1200px - 100vw)/2); bottom: 0; padding: 48px calc((100vw - 1200px)/2) 48px 60px; }
 
   /* header */
-  .rde-header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); background: var(--primary-color);  }
+  .rde-header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); background: linear-gradient(to right,#68BAEB 10%,#0ac6c2);  }
   .rde-header__wrap { width: 1080px; margin: 0 auto; }
   .rde-header-logo { display: flex; float: left; height: 100%; margin: 0; color: #fff; align-items: center; font-size: 32px; font-weight: lighter;
     font-family: Courier New, serif; }
@@ -124,14 +127,14 @@
   <div class="rde-header__wrap">
     <h1 class="rde-header-logo">
       <span class="rde-header-logo__img"></span>
-      &nbsp;VUE Suite
+      &nbsp;rdc-vue-starter
     </h1>
 
     <ul class="rde-header-navs">
       <li v-for="nav in navs"
           class="rde-header-navs__item" :class="{'rde-header-navs__item--crt': isCrtNav(nav)}">
 
-        <a :href="nav.url || '/index.html'">{{nav.title}}</a>
+        <a :href="nav.url || 'index.html'">{{nav.title}}</a>
       </li>
     </ul>
   </div>
@@ -176,27 +179,26 @@
 
     <div id="rde-page">
       <h3 class="rde-h3">关于</h3>
-<p class="rde-p">  RDC-VUE-SUITE是基于RDE模式开发套件的容器，你可以使用它快速创建一个套件库</p>
-<ul>
-<li><p class="rde-p">RDE Integrate模式</li>
-<li><p class="rde-p">Vue CLI</li>
-<li><p class="rde-p">支持发布</li>
-<li><p class="rde-p">开发调试组件/方法</li>
-</ul>
+<p class="rde-p">rdc-vue-starter是基于RDE模式开发vue工程的容器，你可以使用它快速创建一个vue工程</p>
 <h3 class="rde-h3">创建工程</h3>
+<p class="rde-p">搭建好的容器可以通过下面命令直接创建工程：</p>
 <pre class="hljs"><code><span class="hljs-meta">$</span><span class="bash"> rde create</span>
 </code></pre>
-<p class="rde-p">  在选择Container时，请填写<code>rdebase/rdc-vue-suite</code>, 请在<a class="rde-a" href="https://cloud.docker.com/repository/docker/rdebase/rdc-vue-suite/general">Docker Hub</a>上查询最新版本</p>
+<p class="rde-p">如该容器可以使用下面命令创建：</p>
+<pre class="hljs"><code><span class="hljs-meta">$</span><span class="bash"> rde create rdebase/rdc-vue-suite</span>
+</code></pre>
+<p class="rde-p">您可以在<a class="rde-a" href="https://cloud.docker.com/repository/docker/rdebase/rdc-vue-starter/general">Docker Hub</a>上查询最新版本</p>
 <h3 class="rde-h3">快速开始</h3>
-<p class="rde-p">  创建后，可以先使用<code>rde serve</code>命令，启动调试，该命令serve的是<code>app/dev.tsx</code>文件</p>
+<p class="rde-p">工程创建后，可以先使用<code>rde serve</code>命令，启动调试，该命令serve的其实是<code>template/main.js</code>文件。<code>main.js</code>引用了<code>app/App.vue</code>。</p>
+<p class="rde-p">如果您对<code>main.js</code>为啥可以引用<code>app/App.vue</code>有疑惑的话，可以阅读下 <a class="rde-a" href="https://kaola-fed.github.io/RDE/rdc/modes.html">RDC 模式选择的说明</a></p>
 
     </div>
   </div>
 
   <script>
     window.rdeConf = {
-      navs: [{"title":"文档","main":true},{"title":"FAQ","url":"/FAQ.html"}],
-      pages: [{"title":"关于","subTitle":"About","url":"/index.html","order":12},{"title":"工程结构","subTitle":"Structure","url":"/structure.html","order":11},{"title":"支持命令","subTitle":"Scripts","url":"/commands.html","order":10},{"title":"文件映射","subTitle":"Mappings","url":"/mappings.html","order":10},{"title":"样式开发","subTitle":"Style","url":"/style.html","order":9},{"title":"FAQ","subTitle":"","url":"/faq.html","order":0}],
+      navs: [{"title":"文档","main":true},{"title":"速查","url":"cheatsheet.html"},{"title":"FAQ","url":"FAQ.html"}],
+      pages: [{"title":"关于","subTitle":"About","url":"index.html","order":12},{"title":"工程结构","subTitle":"Structure","url":"structure.html","order":11},{"title":"支持命令","subTitle":"Scripts","url":"commands.html","order":10},{"title":"FAQ","subTitle":"","url":"faq.html","order":0}],
     };
 
     new Vue({
@@ -231,6 +233,7 @@
         },
       },
     });
+
   </script>
 </body>
 </html>
