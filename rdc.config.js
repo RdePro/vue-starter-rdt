@@ -1,6 +1,7 @@
 module.exports = {
   framework: 'vue',
   docs: {
+    title: 'rdc-vue-starter',
     url: 'https://rdepro.github.io/rdc-vue-starter/',
   },
   render: {
@@ -27,5 +28,8 @@ module.exports = {
     ports: [
       '8080:8080'
     ]
+  },
+  lint: {
+    ext: ['.js', '.vue']
   }
 };
